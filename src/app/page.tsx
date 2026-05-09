@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useState } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { HorseForm } from '@/components/HorseForm'
@@ -17,12 +18,16 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gray-50">
-      <header className="bg-white border-b px-4 py-3 flex items-center gap-3">
-        <span className="text-2xl">🐴</span>
-        <div>
-          <h1 className="text-xl font-bold leading-none">feed the horse</h1>
-          <p className="text-xs text-muted-foreground">Hestefoder-beregner</p>
-        </div>
+      <header className="bg-white border-b px-4 py-2 flex items-center gap-3">
+        <Image
+          src="/logo.png"
+          alt="feed the horse logo"
+          width={64}
+          height={64}
+          className="object-contain"
+          style={{ width: 'auto', height: '64px' }}
+          priority
+        />
         {horse && (
           <div className="ml-auto text-sm text-muted-foreground">
             <span className="font-medium text-foreground">{horse.name}</span>
